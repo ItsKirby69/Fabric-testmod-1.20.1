@@ -1,0 +1,9 @@
+{
+  "item.testmod.dungeon_key": "Deactive Dungeon Key",
+  "item.testmod.woodstone_key": "Deactive Woodstone Key",
+
+
+  "block.testmod.test_block": "Testing block lol",
+
+  "itemgroup.dungeon_keys": "Dungeon Keys"
+}

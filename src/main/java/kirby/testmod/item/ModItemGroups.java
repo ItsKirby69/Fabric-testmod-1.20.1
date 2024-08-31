@@ -1,0 +1,28 @@
+package kirby.testmod.item;
+
+import kirby.testmod.TestMod;
+import kirby.testmod.block.ModBlocks;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
+
+public class ModItemGroups {
+    public static final ItemGroup DUNGEON_KEYS = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(TestMod.MOD_ID, "dungeon_key"),
+            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.dungeon_keys"))
+                    .icon(() -> new ItemStack(ModItems.DUNGEON_KEY)).entries(((displayContext, entries) -> {
+                        entries.add(ModItems.DUNGEON_KEY);
+                        entries.add(ModItems.WOODSTONE_KEY);
+
+                        entries.add(ModBlocks.TEST_BLOCK);
+                        entries.add(ModBlocks.RAW_TEST_BLOCK);
+                        entries.add(ModItems.FINGER);
+                    })).build());
+    public static void registerItemGroups() {
+        TestMod.LOGGER.info("Registering ModItemGroups for " + TestMod.MOD_ID);
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:cobblestone"
+    },
+    "S": {
+      "tag": "minecraft:planks"
+    },
+    "#": {
+      "item": "minecraft:chiseled_stone_bricks"
+    }
+  },
+  "pattern": [
+    " C ",
+    "C#C",
+    " S "
+  ],
+  "result": {
+    "item": "testmod:dungeon_key"
+  },
+  "show_notification": false
+}
