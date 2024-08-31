@@ -16,6 +16,7 @@ import net.minecraft.util.Identifier;
 public class ModBlocks {
     public static final Block TEST_BLOCK = registerBlock("test_block", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).sounds(BlockSoundGroup.STONE)));
     public static final Block RAW_TEST_BLOCK = registerBlock("raw_test_block", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
+    public static final Block GILDED_LODESTONE = registerBlock("gilded_lodestone", new Block(FabricBlockSettings.copyOf(Blocks.LODESTONE).sounds(BlockSoundGroup.ANCIENT_DEBRIS)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

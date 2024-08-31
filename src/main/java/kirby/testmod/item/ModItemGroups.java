@@ -20,6 +20,8 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks.TEST_BLOCK);
                         entries.add(ModBlocks.RAW_TEST_BLOCK);
+                        entries.add(ModBlocks.GILDED_LODESTONE);
+
                         entries.add(ModItems.FINGER);
                     })).build());
     public static void registerItemGroups() {
