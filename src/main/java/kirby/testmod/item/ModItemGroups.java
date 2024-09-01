@@ -23,6 +23,14 @@ public class ModItemGroups {
                         entries.add(ModBlocks.GILDED_LODESTONE);
 
                         entries.add(ModItems.FINGER);
+
+                        entries.add(ModItems.HALLOW_GOLD_INGOT);
+                        entries.add(ModItems.IGNUS_INGOT);
+                        entries.add(ModItems.AMYTHYLL_INGOT);
+                        entries.add(ModItems.MAGNUS_INGOT);
+                        entries.add(ModItems.GILDED_MAGNUS_INGOT);
+                        entries.add(ModItems.CYRONITE_INGOT);
+
                     })).build());
     public static void registerItemGroups() {
         TestMod.LOGGER.info("Registering ModItemGroups for " + TestMod.MOD_ID);
