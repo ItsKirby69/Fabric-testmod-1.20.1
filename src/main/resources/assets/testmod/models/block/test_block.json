@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_column",
-  "textures": {
-    "end": "testmod:block/test_block_top",
-    "side": "testmod:block/test_block"
-  }
-}

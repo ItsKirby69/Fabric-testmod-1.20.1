@@ -17,19 +17,21 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.DUNGEON_KEY)).entries(((displayContext, entries) -> {
                         entries.add(ModItems.DUNGEON_KEY);
                         entries.add(ModItems.WOODSTONE_KEY);
+                        entries.add(ModItems.FINGER);
 
                         entries.add(ModBlocks.TEST_BLOCK);
                         entries.add(ModBlocks.RAW_TEST_BLOCK);
                         entries.add(ModBlocks.GILDED_LODESTONE);
 
-                        entries.add(ModItems.FINGER);
+                        entries.add(ModBlocks.HALLOWED_BLOCK);
+                        entries.add(ModBlocks.CHISELED_HALLOWED_BRICKS);
 
                         entries.add(ModItems.HALLOW_GOLD_INGOT);
                         entries.add(ModItems.IGNUS_INGOT);
                         entries.add(ModItems.AMYTHYLL_INGOT);
                         entries.add(ModItems.MAGNUS_INGOT);
                         entries.add(ModItems.GILDED_MAGNUS_INGOT);
-                        entries.add(ModItems.CYRONITE_INGOT);
+                        entries.add(ModItems.CRYONITE_INGOT);
 
                     })).build());
     public static void registerItemGroups() {

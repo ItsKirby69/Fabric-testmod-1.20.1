@@ -2,6 +2,7 @@ package kirby.testmod.item;
 
 import kirby.testmod.TestMod;
 import kirby.testmod.item.custom.DungeonKeyItem;
+import kirby.testmod.item.custom.HallowedGoldIngotItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -18,12 +19,12 @@ public class ModItems {
 
     public static final Item FINGER = registerItem("finger", new DungeonKeyItem(new FabricItemSettings()));
 
-    public static final Item HALLOW_GOLD_INGOT = registerItem("hallow_gold_ingot", new Item(new FabricItemSettings()));
-    public static final Item IGNUS_INGOT = registerItem("ignus_ingot", new Item(new FabricItemSettings()));
+    public static final Item HALLOW_GOLD_INGOT = registerItem("hallow_gold_ingot", new HallowedGoldIngotItem(new FabricItemSettings()));
+    public static final Item IGNUS_INGOT = registerItem("ignus_ingot", new Item(new FabricItemSettings().fireproof()));
     public static final Item AMYTHYLL_INGOT = registerItem("amythyll_ingot", new Item(new FabricItemSettings()));
     public static final Item MAGNUS_INGOT = registerItem("magnus_ingot", new Item(new FabricItemSettings()));
     public static final Item GILDED_MAGNUS_INGOT = registerItem("gilded_magnus_ingot", new Item(new FabricItemSettings()));
-    public static final Item CYRONITE_INGOT = registerItem("cyronite_ingot", new Item(new FabricItemSettings()));
+    public static final Item CRYONITE_INGOT = registerItem("cryonite_ingot", new Item(new FabricItemSettings()));
 
 
     //Add items to the ingredients group tab for some reason?

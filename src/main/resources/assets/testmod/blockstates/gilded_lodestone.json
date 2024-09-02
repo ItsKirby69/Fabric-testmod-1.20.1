@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "activated=false": {
       "model": "testmod:block/gilded_lodestone"
+    },
+    "activated=true": {
+      "model": "testmod:block/gilded_lodestone_on"
     }
   }
 }

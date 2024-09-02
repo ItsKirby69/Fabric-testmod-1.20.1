@@ -3,6 +3,6 @@
   "textures": {
     "top": "testmod:block/gilded_lodestone_top",
     "bottom": "testmod:block/gilded_lodestone_bottom",
-    "side": "testmod:block/gilded_lodestone_side"
+    "side": "testmod:block/gilded_lodestone_side_on"
   }
 }
