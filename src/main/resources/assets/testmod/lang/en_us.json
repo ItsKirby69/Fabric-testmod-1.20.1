@@ -5,5 +5,9 @@
 
   "block.testmod.test_block": "Testing block lol",
 
-  "itemgroup.dungeon_keys": "Dungeon Keys"
+  "itemgroup.dungeon_keys": "Dungeon Keys",
+
+  "effect.testmod.scarlet_rot": "Scarlet Rot",
+  "effect.testmod.holy": "Holy"
+
 }

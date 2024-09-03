@@ -1,6 +1,7 @@
 package kirby.testmod;
 
 import kirby.testmod.block.ModBlocks;
+import kirby.testmod.effect.CustomEffects;
 import kirby.testmod.item.ModItemGroups;
 import kirby.testmod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -18,6 +19,7 @@ public class TestMod implements ModInitializer {
 
 		ModBlocks.registerModBlocks();
 		ModItems.registerModItems();
+		CustomEffects.registerEffects();
 		LOGGER.info("Hello Fabric world!");
 	}
 }

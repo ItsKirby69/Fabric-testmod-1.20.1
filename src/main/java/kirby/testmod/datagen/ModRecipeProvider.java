@@ -29,24 +29,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.HALLOW_GOLD_INGOT, RecipeCategory.DECORATIONS,
                 ModBlocks.HALLOWED_BLOCK);
 
-        //ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DUNGEON_KEY, 1)
-        //        .pattern(" C ")
-        //        .pattern("C#C")
-        //        .pattern(" S ")
-        //        .input("C", Items.COBBLESTONE)
-        //        .input("S", Items.OAK_PLANKS)
-        //        .input("#", Items.CHISELED_STONE_BRICKS)
-        //        .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
-        //        .offerTo(exporter, new Identifier(getRecipeName(ModItems.DUNGEON_KEY)));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DUNGEON_KEY, 1)
+                .pattern(" C ")
+                .pattern("C#C")
+                .pattern(" S ")
+                .input('C', Items.COBBLESTONE)
+                .input('S', Items.OAK_PLANKS)
+                .input('#', Items.CHISELED_STONE_BRICKS)
+                .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.DUNGEON_KEY)));
 
-        //ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.WOODSTONE_KEY, 1)
-        //        .pattern(" # ")
-        //        .pattern("CSC")
-        //        .pattern(" S ")
-        //        .input("C", Items.COBBLESTONE)
-        //        .input("S", Items.STICK)
-        //        .input("#", Items.STONE_BRICKS)
-        //        .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
-        //        .offerTo(exporter, new Identifier(getRecipeName(ModItems.WOODSTONE_KEY)));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.WOODSTONE_KEY, 1)
+                .pattern(" # ")
+                .pattern("CSC")
+                .pattern(" S ")
+                .input('C', Items.COBBLESTONE)
+                .input('S', Items.STICK)
+                .input('#', Items.STONE_BRICKS)
+                .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.WOODSTONE_KEY)));
     }
 }
