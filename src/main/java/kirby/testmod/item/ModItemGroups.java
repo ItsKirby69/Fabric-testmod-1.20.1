@@ -33,6 +33,11 @@ public class ModItemGroups {
                         entries.add(ModItems.GILDED_MAGNUS_INGOT);
                         entries.add(ModItems.CRYONITE_INGOT);
 
+                        entries.add(ModItems.AMETHYST_BOTTLE);
+                        //entries.add(ModItems.AMETHYST_DRAGON_BREATH);
+
+                        entries.add(ModBlocks.SCARLET_ROSE);
+
                     })).build());
     public static void registerItemGroups() {
         TestMod.LOGGER.info("Registering ModItemGroups for " + TestMod.MOD_ID);

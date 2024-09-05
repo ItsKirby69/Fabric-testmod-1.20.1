@@ -4,6 +4,7 @@ import kirby.testmod.block.ModBlocks;
 import kirby.testmod.effect.CustomEffects;
 import kirby.testmod.item.ModItemGroups;
 import kirby.testmod.item.ModItems;
+import kirby.testmod.potion.ModPotions;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ public class TestMod implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModItems.registerModItems();
 		CustomEffects.registerEffects();
+		ModPotions.registerPotions();
 		LOGGER.info("Hello Fabric world!");
 	}
 }

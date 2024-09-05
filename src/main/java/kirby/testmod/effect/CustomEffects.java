@@ -13,19 +13,39 @@ public class CustomEffects {
     //holy, scarlet rot, fire immunity (+ gives speed on heated blocks), bleed.
     public static StatusEffect HOLY;
     public static StatusEffect SCARLET_ROT;
+    public static StatusEffect BLEED;
+    public static StatusEffect LAVA_SPICED;
 
     public static StatusEffect registerHolyEffect(String name){
         return Registry.register(Registries.STATUS_EFFECT, new Identifier(TestMod.MOD_ID, name),
-                new HolyEffect(StatusEffectCategory.BENEFICIAL, 9520880));
+                new HolyEffect(StatusEffectCategory.BENEFICIAL, 16644511)
+                        .addAttributeModifier(EntityAttributes.GENERIC_LUCK, "55FCED67-E92A-486E-9800-B47F202C4386",
+                        1F, EntityAttributeModifier.Operation.ADDITION));
     }
 
     public static StatusEffect registerScarletRotEffect(String name){
         return Registry.register(Registries.STATUS_EFFECT, new Identifier(TestMod.MOD_ID, name),
-                new ScarletRotEffect(StatusEffectCategory.HARMFUL, 8889187));
+                new ScarletRotEffect(StatusEffectCategory.HARMFUL, 16728064)
+                        .addAttributeModifier(EntityAttributes.GENERIC_ARMOR, "55FCED67-E92A-486E-9800-B47F202C4386",
+                                -0.5F, EntityAttributeModifier.Operation.MULTIPLY_BASE));
+    }
+
+    public static StatusEffect registerBleedEffect(String name){
+        return Registry.register(Registries.STATUS_EFFECT, new Identifier(TestMod.MOD_ID, name),
+                new BleedEffect(StatusEffectCategory.HARMFUL, 10485760));
+    }
+
+    public static StatusEffect registerLavaSpicedEffect(String name){
+        return Registry.register(Registries.STATUS_EFFECT, new Identifier(TestMod.MOD_ID, name),
+                new LavaSpicedEffect(StatusEffectCategory.HARMFUL, 16740608));
     }
 
     public static void registerEffects(){
+        TestMod.LOGGER.info("Registering CustomEffects for " + TestMod.MOD_ID);
+
         HOLY = registerHolyEffect("holy");
         SCARLET_ROT = registerScarletRotEffect("scarlet_rot");
+        BLEED = registerBleedEffect("bleed");
+        LAVA_SPICED = registerLavaSpicedEffect("lava_spiced");
     }
 }

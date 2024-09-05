@@ -4,10 +4,17 @@
 
 
   "block.testmod.test_block": "Testing block lol",
+  "block.testmod.scarlet_rose": "Scarlet Rose",
+
 
   "itemgroup.dungeon_keys": "Dungeon Keys",
 
   "effect.testmod.scarlet_rot": "Scarlet Rot",
-  "effect.testmod.holy": "Holy"
+  "effect.testmod.holy": "Holy",
+
+  "item.minecraft.potion.effect.holy_potion": "Potion of Holy Water",
+  "item.minecraft.splash_potion.effect.holy_potion": "Splash Potion of Holy Water",
+  "item.minecraft.lingering_potion.effect.holy_potion": "Lingering Potion of Holy Water",
+  "item.minecraft.tipped_arrow.effect.holy_potion": "Tipped Arrow of Holy Water"
 
 }

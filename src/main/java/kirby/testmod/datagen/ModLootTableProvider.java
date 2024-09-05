@@ -28,6 +28,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.CHISELED_HALLOWED_BRICKS);
         addDrop(ModBlocks.HALLOWED_BLOCK);
 
+        addDrop(ModBlocks.SCARLET_ROSE);
+        addPottedPlantDrops(ModBlocks.POTTED_SCARLET_ROSE);
+
+
         addDrop(ModBlocks.GILDED_LODESTONE, copperLikeOreDrops(ModBlocks.GILDED_LODESTONE, Items.LODESTONE, 5.0f, 10.0f));
     }
 

@@ -48,5 +48,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('#', Items.STONE_BRICKS)
                 .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.WOODSTONE_KEY)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.AMETHYST_BOTTLE, 3)
+                .pattern("AGA")
+                .pattern(" A ")
+                .input('A', Items.AMETHYST_SHARD)
+                .input('G', Items.GLASS)
+                .criterion(hasItem(Items.AMETHYST_SHARD), conditionsFromItem(Items.AMETHYST_SHARD))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.AMETHYST_BOTTLE)));
     }
 }

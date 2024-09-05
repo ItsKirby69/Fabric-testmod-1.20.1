@@ -2,12 +2,14 @@ package kirby.testmod.block;
 
 import kirby.testmod.TestMod;
 import kirby.testmod.block.custom.GildedLodestoneBlock;
+import kirby.testmod.block.custom.ScarletRoseBlock;
+import kirby.testmod.effect.CustomEffects;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.PillarBlock;
+import net.minecraft.block.*;
+import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -26,6 +28,22 @@ public class ModBlocks {
     public static final Block HALLOWED_BLOCK = registerBlock("hallowed_block", new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).sounds(BlockSoundGroup.METAL)));
     public static final Block CHISELED_HALLOWED_BRICKS = registerBlock("chiseled_hallowed_bricks", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS).sounds(BlockSoundGroup.METAL)));
 
+    //plants
+    //TODO weird interaction with the statuseffect.wither part. Something with sus stews for some reason.
+    public static final Block SCARLET_ROSE = registerBlock("scarlet_rose",
+            new ScarletRoseBlock(StatusEffects.WITHER,
+                    AbstractBlock.Settings.create()
+                            .mapColor(MapColor.DARK_RED)
+                            .noCollision()
+                            .breakInstantly()
+                            .sounds(BlockSoundGroup.GRASS)
+                            .offset(AbstractBlock.OffsetType.XZ)
+                            .pistonBehavior(PistonBehavior.DESTROY)
+                            .nonOpaque()));
+
+    public static final Block POTTED_SCARLET_ROSE = Registry.register(Registries.BLOCK, new Identifier(TestMod.MOD_ID, "potted_scarlet_rose"),
+            new FlowerPotBlock(SCARLET_ROSE, FabricBlockSettings.copyOf(Blocks.POTTED_WITHER_ROSE).nonOpaque()));
+    
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(TestMod.MOD_ID, name), block);
