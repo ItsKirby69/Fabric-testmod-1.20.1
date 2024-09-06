@@ -3,22 +3,16 @@ package kirby.testmod.item;
 import kirby.testmod.TestMod;
 import kirby.testmod.effect.CustomEffects;
 import kirby.testmod.item.custom.AmethystBottleItem;
-import kirby.testmod.item.custom.AmethystPotionItem;
 import kirby.testmod.item.custom.DungeonKeyItem;
 import kirby.testmod.item.custom.HallowedGoldIngotItem;
-import kirby.testmod.potion.ModPotions;
+import kirby.testmod.item.custom.ModArmorItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.*;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionUtil;
-import net.minecraft.predicate.entity.EntityEffectPredicate;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Rarity;
 
 public class ModItems {
     public static final Item DUNGEON_KEY = registerItem("dungeon_key", new Item(new FabricItemSettings()));
@@ -34,6 +28,17 @@ public class ModItems {
     public static final Item CRYONITE_INGOT = registerItem("cryonite_ingot", new Item(new FabricItemSettings()));
 
     public static final Item AMETHYST_BOTTLE = registerItem("amethyst_bottle", new AmethystBottleItem(new FabricItemSettings()));
+
+
+    //ARMORS
+    public static final Item HALLOWED_GOLD_HELMET = registerItem("hallowed_gold_helmet",
+            new ModArmorItem(ModArmorMaterials.HALLOWED_GOLD, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item HALLOWED_GOLD_CHESTPLATE = registerItem("hallowed_gold_chestplate",
+            new ArmorItem(ModArmorMaterials.HALLOWED_GOLD, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item HALLOWED_GOLD_LEGGINGS = registerItem("hallowed_gold_leggings",
+            new ArmorItem(ModArmorMaterials.HALLOWED_GOLD, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item HALLOWED_GOLD_BOOTS = registerItem("hallowed_gold_boots",
+            new ArmorItem(ModArmorMaterials.HALLOWED_GOLD, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
     //public static final Item LAVA_POTION = registerItem("lava_potion", new PotionItem(new FabricItemSettings()));
     //public static final Item AMETHYST_POTION = registerItem("amethyst_potion", new AmethystPotionItem(new FabricItemSettings().maxCount(1)));

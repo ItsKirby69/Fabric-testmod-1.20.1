@@ -1,6 +1,7 @@
 package kirby.testmod.block.custom;
 
 import kirby.testmod.effect.CustomEffects;
+import kirby.testmod.particle.ModParticles;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -35,7 +36,7 @@ public class ScarletRoseBlock extends FlowerBlock {
         for (int i = 0; i < 3; i++) {
             if (random.nextBoolean()) {
                 world.addParticle(
-                        ParticleTypes.ENCHANT, d + random.nextDouble() / 5.0, (double)pos.getY() + (0.5 - random.nextDouble()), e + random.nextDouble() / 5.0, 0.0, 0.0, 0.0
+                        ModParticles.SCARLET_PARTICLE, d + random.nextDouble() / 5.0, (double)pos.getY() + (0.5 - random.nextDouble()), e + random.nextDouble() / 5.0, 0.0, 0.0, 0.0
                 );
             }
         }
@@ -45,7 +46,7 @@ public class ScarletRoseBlock extends FlowerBlock {
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL) {
             if (entity instanceof LivingEntity livingEntity && !livingEntity.isInvulnerableTo(world.getDamageSources().wither())) {
-                livingEntity.addStatusEffect(new StatusEffectInstance(CustomEffects.SCARLET_ROT, 60));
+                livingEntity.addStatusEffect(new StatusEffectInstance(CustomEffects.SCARLET_ROT, 40));
             }
         }
     }

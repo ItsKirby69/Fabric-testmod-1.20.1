@@ -2,15 +2,26 @@
   "item.testmod.dungeon_key": "Deactive Dungeon Key",
   "item.testmod.woodstone_key": "Deactive Woodstone Key",
 
+  "item.testmod.hallowed_gold_helmet": "Hallowed Gold Helmet",
+  "item.testmod.hallowed_gold_chestplate": "Hallowed Gold Chestplate",
+  "item.testmod.hallowed_gold_leggings": "Hallowed Gold Leggings",
+  "item.testmod.hallowed_gold_boots": "Hallowed Gold Boots",
+
 
   "block.testmod.test_block": "Testing block lol",
   "block.testmod.scarlet_rose": "Scarlet Rose",
+
+  "block.testmod.hallowed_block": "Hallowed Gold Block",
+  "block.testmod.chiseled_hallowed_bricks": "Chiseled Hallowed Gold Bricks",
+  "block.testmod.checkered_hallowed_bricks": "Checkered Hallowed Gold Bricks",
 
 
   "itemgroup.dungeon_keys": "Dungeon Keys",
 
   "effect.testmod.scarlet_rot": "Scarlet Rot",
   "effect.testmod.holy": "Holy",
+  "effect.testmod.bleed": "Bleed",
+  "effect.testmod.lava_spiced": "Lava Spiced",
 
   "item.minecraft.potion.effect.holy_potion": "Potion of Holy Water",
   "item.minecraft.splash_potion.effect.holy_potion": "Splash Potion of Holy Water",

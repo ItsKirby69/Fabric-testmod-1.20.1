@@ -15,12 +15,11 @@ public abstract class LivingEntityMixin {
 
     @Inject(method = "damage", at = @At("HEAD"), cancellable = true)
     private void damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if (source.isIn(DamageTypeTags.IS_FREEZING) && ((LivingEntity)(Object)this).hasStatusEffect(CustomEffects.HOLY)) {
+        //HOLY IMMUNITY
+        if (source.isIn(DamageTypeTags.IS_FREEZING) || (source.isOf(DamageTypes.WITHER) && ((LivingEntity)(Object)this).hasStatusEffect(CustomEffects.HOLY))) {
             cir.setReturnValue(false);
-            cir.cancel();
-        } else if (source.isOf(DamageTypes.WITHER) && ((LivingEntity)(Object)this).hasStatusEffect(CustomEffects.HOLY)) {
+        } else if (source.isIn(DamageTypeTags.IS_FIRE) && ((LivingEntity)(Object)this).hasStatusEffect(CustomEffects.SCARLET_ROT)) {
             cir.setReturnValue(false);
-            cir.cancel();
         }
     }
 }

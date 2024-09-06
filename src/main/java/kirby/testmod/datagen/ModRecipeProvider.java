@@ -29,6 +29,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.HALLOW_GOLD_INGOT, RecipeCategory.DECORATIONS,
                 ModBlocks.HALLOWED_BLOCK);
 
+        offer2x2CompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHECKERED_HALLOWED_BRICKS, ModItems.HALLOW_GOLD_INGOT);
+
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DUNGEON_KEY, 1)
                 .pattern(" C ")
                 .pattern("C#C")

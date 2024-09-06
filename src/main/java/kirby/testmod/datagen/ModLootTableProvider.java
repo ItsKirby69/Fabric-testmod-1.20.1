@@ -26,6 +26,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.TEST_BLOCK);
         addDrop(ModBlocks.RAW_TEST_BLOCK);
         addDrop(ModBlocks.CHISELED_HALLOWED_BRICKS);
+        addDrop(ModBlocks.CHECKERED_HALLOWED_BRICKS);
         addDrop(ModBlocks.HALLOWED_BLOCK);
 
         addDrop(ModBlocks.SCARLET_ROSE);

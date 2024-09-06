@@ -1,11 +1,13 @@
-package kirby.testmod.effect;
+package kirby.testmod.effect.custom;
 
+import kirby.testmod.effect.CustomEffects;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
 public class ScarletRotEffect extends StatusEffect {
-    protected ScarletRotEffect(StatusEffectCategory category, int color) {
+    //done, might make changes for armor changes in the customEffects class //TODO why does the scarlet rose don't give damage if u stand on it?
+    public ScarletRotEffect(StatusEffectCategory category, int color) {
         super(category, color);
     }
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
@@ -19,6 +21,7 @@ public class ScarletRotEffect extends StatusEffect {
             int i = 40 >> amplifier;
             return i > 0 ? duration % i == 0 : true;
         }
+
         return false;
     }
 }

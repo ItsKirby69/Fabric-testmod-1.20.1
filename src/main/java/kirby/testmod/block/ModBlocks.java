@@ -26,12 +26,13 @@ public class ModBlocks {
 
     //deco blocks :U
     public static final Block HALLOWED_BLOCK = registerBlock("hallowed_block", new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).sounds(BlockSoundGroup.METAL)));
+    public static final Block CHECKERED_HALLOWED_BRICKS = registerBlock("checkered_hallowed_bricks", new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).sounds(BlockSoundGroup.METAL)));
     public static final Block CHISELED_HALLOWED_BRICKS = registerBlock("chiseled_hallowed_bricks", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS).sounds(BlockSoundGroup.METAL)));
 
     //plants
     //TODO weird interaction with the statuseffect.wither part. Something with sus stews for some reason.
     public static final Block SCARLET_ROSE = registerBlock("scarlet_rose",
-            new ScarletRoseBlock(StatusEffects.WITHER,
+            new ScarletRoseBlock(StatusEffects.INSTANT_DAMAGE,
                     AbstractBlock.Settings.create()
                             .mapColor(MapColor.DARK_RED)
                             .noCollision()
@@ -43,7 +44,7 @@ public class ModBlocks {
 
     public static final Block POTTED_SCARLET_ROSE = Registry.register(Registries.BLOCK, new Identifier(TestMod.MOD_ID, "potted_scarlet_rose"),
             new FlowerPotBlock(SCARLET_ROSE, FabricBlockSettings.copyOf(Blocks.POTTED_WITHER_ROSE).nonOpaque()));
-    
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(TestMod.MOD_ID, name), block);

@@ -38,6 +38,11 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks.SCARLET_ROSE);
 
+                        entries.add(ModItems.HALLOWED_GOLD_HELMET);
+                        entries.add(ModItems.HALLOWED_GOLD_CHESTPLATE);
+                        entries.add(ModItems.HALLOWED_GOLD_LEGGINGS);
+                        entries.add(ModItems.HALLOWED_GOLD_BOOTS);
+
                     })).build());
     public static void registerItemGroups() {
         TestMod.LOGGER.info("Registering ModItemGroups for " + TestMod.MOD_ID);

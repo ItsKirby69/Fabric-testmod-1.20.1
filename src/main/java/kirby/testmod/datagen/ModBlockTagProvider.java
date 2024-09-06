@@ -27,14 +27,16 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.GILDED_LODESTONE)
                 .add(ModBlocks.HALLOWED_BLOCK)
-                .add(ModBlocks.CHISELED_HALLOWED_BRICKS);
+                .add(ModBlocks.CHISELED_HALLOWED_BRICKS)
+                .add(ModBlocks.CHECKERED_HALLOWED_BRICKS);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.TEST_BLOCK)
                 .add(ModBlocks.RAW_TEST_BLOCK);
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.HALLOWED_BLOCK)
-                .add(ModBlocks.CHISELED_HALLOWED_BRICKS);
+                .add(ModBlocks.CHISELED_HALLOWED_BRICKS)
+                .add(ModBlocks.CHECKERED_HALLOWED_BRICKS);
 
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")))
                 .add(ModBlocks.GILDED_LODESTONE);

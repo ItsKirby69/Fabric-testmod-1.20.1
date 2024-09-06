@@ -1,4 +1,4 @@
-package kirby.testmod.effect;
+package kirby.testmod.effect.custom;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -9,7 +9,7 @@ import net.minecraft.sound.SoundEvents;
 import org.jetbrains.annotations.Nullable;
 
 public class LavaSpicedEffect extends StatusEffect {
-    protected LavaSpicedEffect(StatusEffectCategory category, int color) {
+    public LavaSpicedEffect(StatusEffectCategory category, int color) {
         super(category, color);
     }
 
