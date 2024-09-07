@@ -1,6 +1,7 @@
 package kirby.testmod.item.custom;
 
 import com.google.common.collect.ImmutableMap;
+import kirby.testmod.TestMod;
 import kirby.testmod.effect.CustomEffects;
 import kirby.testmod.item.ModArmorMaterials;
 import net.minecraft.entity.Entity;
@@ -13,10 +14,11 @@ import net.minecraft.world.World;
 
 import java.util.Map;
 
+//TODO add more armor sets with effects and keep an eye for the applying
 public class ModArmorItem extends ArmorItem {
     private static final Map<ArmorMaterial, StatusEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance>())
-                    .put(ModArmorMaterials.HALLOWED_GOLD, new StatusEffectInstance(CustomEffects.HOLY, 400, 1,
+                    .put(ModArmorMaterials.HALLOWED_GOLD, new StatusEffectInstance(CustomEffects.HOLY, 60, 1,
                             false, false, true)).build();
     public ModArmorItem(ArmorMaterial material, Type type, Settings settings) {
         super(material, type, settings);
@@ -45,9 +47,14 @@ public class ModArmorItem extends ArmorItem {
     }
 
     private void addStatusEffectForMaterial(PlayerEntity player, ArmorMaterial mapArmorMaterial, StatusEffectInstance mapStatusEffect) {
-        boolean hasPlayerEffect = player.hasStatusEffect(mapStatusEffect.getEffectType());
+        //boolean hasPlayerEffect = player.hasStatusEffect(mapStatusEffect.getEffectType());
+        StatusEffectInstance dur = player.getStatusEffect(mapStatusEffect.getEffectType());
 
-        if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
+        if (dur != null) {
+            if(hasCorrectArmorOn(mapArmorMaterial, player) && (dur.getDuration() < 50)) {
+                player.addStatusEffect(new StatusEffectInstance(mapStatusEffect));
+            }
+        } else {
             player.addStatusEffect(new StatusEffectInstance(mapStatusEffect));
         }
     }

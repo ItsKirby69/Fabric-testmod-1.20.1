@@ -14,7 +14,7 @@ public class BleedParticle extends SpriteBillboardParticle {
         this.velocityMultiplier = 0.6f;
         this.setPos(x,y,z);
         this.velocityX = xd;
-        this.velocityY = yd - 1f;
+        this.velocityY = yd + 1f;
         this.velocityZ = zd;
         this.scale *= 0.75F;
         this.maxAge = 20 + this.random.nextInt(12);
@@ -51,7 +51,7 @@ public class BleedParticle extends SpriteBillboardParticle {
         }
 
         public Particle createParticle(DefaultParticleType particleType, ClientWorld level, double x, double y, double z, double velocityX, double velocityY, double velocityZ) {
-            return new BleedParticle(level, x, y, z, this.sprites, velocityX, velocityY, velocityZ);
+            return new BleedParticle(level, x, y, z, this.sprites, velocityX, velocityY - 0.1, velocityZ);
         }
 
     }

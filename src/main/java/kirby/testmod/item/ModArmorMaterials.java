@@ -12,7 +12,9 @@ import java.util.function.Supplier;
 public enum ModArmorMaterials implements ArmorMaterial {
 
     HALLOWED_GOLD("hallowed_gold", 25, new int[] { 2, 5, 6, 2}, 25,
-            SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0f, 0.0f, () -> Ingredient.ofItems(ModItems.HALLOW_GOLD_INGOT))
+            SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0f, 0.0f, () -> Ingredient.ofItems(ModItems.HALLOW_GOLD_INGOT)),
+    IGNUS("ignus", 37, new int[] { 3, 6, 7, 3}, 15,
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 0.0f, 0.0f, () -> Ingredient.ofItems(ModItems.IGNUS_INGOT))
 
     ;
 

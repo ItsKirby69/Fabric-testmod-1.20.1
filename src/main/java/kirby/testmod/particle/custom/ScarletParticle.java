@@ -10,12 +10,12 @@ import net.minecraft.util.math.MathHelper;
 public class ScarletParticle extends AscendingParticle {
 
     protected ScarletParticle(ClientWorld level, double x, double y, double z, double xd, double yd, double zd, float scaleMultiplier, SpriteProvider spriteSet) {
-        super(level, x, y, z, 0.0f, 0.0f, 0.0f, xd, yd, zd, scaleMultiplier, spriteSet, 0.0f, 8, -0.1f, true);
+        super(level, x, y, z, 0.1f, 0.1f, 0.1f, xd, yd, zd, scaleMultiplier, spriteSet, 0.0f, 8, -0.25f, true);
 
         this.velocityMultiplier = 0.6f;
         this.setPos(x,y,z);
         this.velocityX = xd + (random.nextDouble() * 0.06 - 0.01);
-        this.velocityY = yd + (random.nextDouble() * 0.22 - 0.1);
+        this.velocityY = yd + (random.nextDouble() * 0.06 - 0.1);
         this.velocityZ = zd + (random.nextDouble() * 0.06 - 0.01);
         //this.scale *= 0.75F;
         this.maxAge = 20 + this.random.nextInt(12);
@@ -43,20 +43,20 @@ public class ScarletParticle extends AscendingParticle {
         return this.scale * (1.0F - f * f * 0.1f);
     }
 
-//    @Override
-//    public int getBrightness(float tint) {
-//        float f = ((float)this.age + tint) / (float)this.maxAge;
-//        f = MathHelper.clamp(f, 0.0F, 0.8F);
-//        int i = super.getBrightness(tint);
-//        int j = i & 0xFF;
-//        int k = i >> 16 & 0xFF;
-//        j += (int)(f * 15.0F * 16.0F);
-//        if (j > 240) {
-//            j = 240;
-//        }
-//
-//        return j | k << 16;
-//    }
+    @Override
+    public int getBrightness(float tint) {
+        float f = ((float)this.age + tint) / (float)this.maxAge;
+        f = MathHelper.clamp(f, 0.0F, 0.8F);
+        int i = super.getBrightness(tint);
+        int j = i & 0xFF;
+        int k = i >> 16 & 0xFF;
+        j += (int)(f * 15.0F * 16.0F);
+        if (j > 240) {
+            j = 240;
+        }
+
+        return j | k << 16;
+    }
 
     @Environment(EnvType.CLIENT)
     public static class Factory implements ParticleFactory<DefaultParticleType> {

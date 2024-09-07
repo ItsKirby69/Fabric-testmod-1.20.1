@@ -6,7 +6,7 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
 public class ScarletRotEffect extends StatusEffect {
-    //done, might make changes for armor changes in the customEffects class //TODO why does the scarlet rose don't give damage if u stand on it?
+    //done, might make changes for armor changes in the customEffects class
     public ScarletRotEffect(StatusEffectCategory category, int color) {
         super(category, color);
     }

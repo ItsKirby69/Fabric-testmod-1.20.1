@@ -28,6 +28,7 @@
 	"mixins": [
 		"testmod.mixins.json"
 	],
+	"accessWidener": "testmod.accesswidender",
 	"depends": {
 		"fabricloader": ">=0.16.3",
 		"minecraft": "~1.20.1",

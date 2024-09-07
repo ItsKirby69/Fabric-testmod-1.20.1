@@ -1,5 +1,6 @@
 package kirby.testmod.item.custom;
 
+import kirby.testmod.effect.CustomEffects;
 import kirby.testmod.item.ModItems;
 import kirby.testmod.potion.ModPotions;
 import net.minecraft.advancement.criterion.Criteria;
@@ -7,6 +8,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.LeveledCauldronBlock;
 import net.minecraft.entity.AreaEffectCloudEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
@@ -21,6 +23,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.hit.BlockHitResult;
@@ -38,6 +41,16 @@ public class AmethystBottleItem extends Item {
     }
 
     @Override
+    public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
+        ItemStack itemStack = user.getStackInHand(hand);
+        if(entity.hasStatusEffect(CustomEffects.BLEED)) {
+            return ActionResult.PASS;
+
+        }
+        return ActionResult.PASS;
+    }
+
+    @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
             BlockHitResult blockHitResult = raycast(world, user, RaycastContext.FluidHandling.SOURCE_ONLY);
@@ -52,7 +65,7 @@ public class AmethystBottleItem extends Item {
                     ItemStack lavaPotion = new ItemStack(Items.POTION);
                     PotionUtil.setPotion(lavaPotion, ModPotions.LAVA_POTION);
 
-                    //TODO Amethyst bottles need to properly get the lava potion. and also work in cauldrons | WORKING
+                    //TODO Amethyst bottles remove water pickup.
                     if (world.getFluidState(blockPos).isIn(FluidTags.WATER)) {
                         world.playSound(user, user.getX(), user.getY(), user.getZ(), SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL, 1.0F, 1.0F);
                         world.emitGameEvent(user, GameEvent.FLUID_PICKUP, blockPos);
